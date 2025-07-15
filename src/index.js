@@ -15,12 +15,10 @@ import Contact from './components/contact.js';
 
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async'; // ✅ import HelmetProvider
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <HelmetProvider> {/* ✅ Wrap your entire app here */}
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
@@ -35,7 +33,6 @@ root.render(
           <Route path='/mock' element={<MockTestPage />} /> */}
         </Routes>
       </BrowserRouter>
-    </HelmetProvider>
   </React.StrictMode>
 );
 

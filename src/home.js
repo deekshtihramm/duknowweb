@@ -5,7 +5,7 @@ import Header from "./components/header";
 import { useNavigate } from "react-router-dom";
 import mockimg from "./images/online-marketing.png";
 import Footer from "./components/footer";
-import { Helmet } from "react-helmet-async";
+// import { Helmet } from "react-helmet-async";
 
 
 const Home = () => {
@@ -80,7 +80,7 @@ const Home = () => {
   return (
     <div className="container">
 
-
+{/* 
       <Helmet>
       <title>Duknow | Smart Mock Test & Learning Platform</title>
       <meta
@@ -111,7 +111,7 @@ const Home = () => {
         content="Smart mock tests, analytics, and language support for UPSC, SSC, NEET, JEE, and more."
       />
       <meta name="twitter:image" content="https://duknow.com/dukknow-preview.jpg" />
-    </Helmet>
+    </Helmet> */}
 
 
       <Header onSelectCategory={handleSelectCategory} />
