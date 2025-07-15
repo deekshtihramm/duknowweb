@@ -21,7 +21,7 @@ const FactContentPage = () => {
     const fetchFacts = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/usersearch/page/${pageName}?category=${category}`
+          `https://app.backend.duknow.in/api/usersearch/page/${pageName}?category=${category}`
         );
         setFacts(res.data);
         setLoading(false);
