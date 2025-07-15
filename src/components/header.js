@@ -11,6 +11,7 @@ const Header = ({ onSelectCategory }) => {
   const storedUser = localStorage.getItem("duknowUser");
   let user = null;
 
+  
   try {
     user = storedUser ? JSON.parse(storedUser) : null;
   } catch (err) {
