@@ -1,0 +1,51 @@
+.about-container {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
+  font-family: "Segoe UI", sans-serif;
+  color: #222;
+}
+
+.about-title {
+  background-color: #94e4ff;
+  font-size: 34px;
+  font-weight: bold;
+  color: #1e40af;
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  margin-top: 0px;
+}
+
+.about-text {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.features-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+
+.features-list {
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
+
+.features-list li {
+  font-size: 17px;
+  margin-bottom: 10px;
+  list-style-type: disc;
+}
+
+.about-tagline {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  color: #047857;
+  margin-top: 30px;
+}

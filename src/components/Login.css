@@ -1,0 +1,128 @@
+.login-container {
+  min-height: 100vh;
+  background: linear-gradient(to right, #ffffff, #f0f8ff, #ffbd61);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  font-family: sans-serif;
+}
+
+.login-box {
+  max-width: 960px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .login-box {
+    flex-direction: row;
+  }
+}
+
+.login-left {
+  background-color: #ff9428;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.login-left h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.login-left p {
+  margin-bottom: 1.5rem;
+  color: #dbeafe;
+}
+
+.login-left img {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+}
+
+.login-right {
+  flex: 1;
+  padding: 2rem;
+}
+
+.login-right h2 {
+  font-size: 1.5rem;
+  color: #1e3a8a;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px #bfdbfe;
+}
+
+.button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #ff9428;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background-color: #ff6128;
+}
+
+.login-right p {
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.login-right a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.homebtn{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 0.5rem 1rem;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
