@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- ✅ Homepage -->
+  <url>
+    <loc>https://www.duknow.in/</loc>
+    <lastmod>2025-07-16</lastmod>
+  </url>
+
+  <!-- Other Pages -->
+  <url>
+    <loc>https://www.duknow.in/page/general-1/?category=general</loc>
+    <lastmod>2025-07-14</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.duknow.in/page/science-3/?category=science</loc>
+    <lastmod>2025-07-12</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.duknow.in/page/technology-7/?category=technology</loc>
+    <lastmod>2025-07-10</lastmod>
+  </url>
+
+  <!-- Add more posts below -->
+
+</urlset>
