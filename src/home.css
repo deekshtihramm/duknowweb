@@ -343,8 +343,9 @@ body, html {
   z-index: 1;
   padding: 10px;
   display: none;
-  height: 300px;
-  overflow-y: scroll
+  height: auto;
+  border-radius: 10px;
+  line-height: 30px;
 }
 
 .dropdown:hover .dropdown-content {
@@ -353,9 +354,8 @@ body, html {
 
 .innerdropdown {
   display: grid;
-  grid-template-columns: repeat(3, minmax(100px, 1fr));
   gap: 8px;
-  padding: 0px 20px;
+  height: auto;
 }
 
 
@@ -474,4 +474,20 @@ body, html {
   font-size: 15px;
   margin-bottom: 10px;
   margin-top: -5px;
+}
+.loader {
+  border: 4px solid #ccc;
+  border-top: 4px dashed #2d99eb; /* green */
+  border-left: 4px dashed #2d99eb; /* green */
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }

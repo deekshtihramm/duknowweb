@@ -1,0 +1,103 @@
+.install-page {
+  font-family: "Segoe UI", sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Hero Section */
+.install-hero {
+  background: white;
+  padding: 60px 20px;
+}
+
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  color: #2b2b2b;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin: 20px 0;
+}
+
+.play-btn {
+  width: 180px;
+}
+
+.hero-image img {
+  max-width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-section {
+  background: #f5f5f5;
+  padding: 50px 20px;
+}
+
+.about-container {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.aabout-title {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #2b2b2b;
+}
+
+.about-intro {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.about-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.about-column {
+  flex: 1;
+  min-width: 280px;
+  text-align: left;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.about-column h3 {
+  color: #2e7d32;
+  margin-bottom: 15px;
+}
+
+.about-column ul {
+  list-style: disc;
+  padding-left: 20px;
+  color: #444;
+}
+
+.about-footer {
+  font-size: 1rem;
+  color: #444;
+  font-style: italic;
+}

@@ -26,11 +26,13 @@ root.render(
           <Route path='/page/:pageName' element={<FactContentPage />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/install' element={<App />} />
           
           {/* <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/profile' element={<ProfilePage />} />
           <Route path='/mock' element={<MockTestPage />} /> */}
+          <Route path='*' element={<App />} />
         </Routes>
       </BrowserRouter>
   </React.StrictMode>
