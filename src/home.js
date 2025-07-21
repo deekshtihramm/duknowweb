@@ -20,7 +20,7 @@ const Home = () => {
   const fetchFacts = async (selectedCategory, append = false) => {
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:5000/api/usersearch/web/${selectedCategory}/limited`);
+      const res = await fetch(`https://web.backend.duknow.in/api/usersearch/web/${selectedCategory}/limited`);
       const data = await res.json();
       console.log("Fetched data:", data);
       if (Array.isArray(data)) {
