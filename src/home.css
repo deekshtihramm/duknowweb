@@ -216,7 +216,8 @@ body, html {
   }
 
   .innerdropdown {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
 
@@ -354,6 +355,10 @@ body, html {
 
 .innerdropdown {
   display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-height: 400px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
   gap: 8px;
   height: auto;
 }

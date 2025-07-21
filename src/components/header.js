@@ -73,7 +73,7 @@ const Header = ({ onSelectCategory }) => {
               {/* Basic */}
               <div className="line1">
                 <div className="line2">
-                  {/* <h5 className="listhead">Basic</h5> */}
+                  <h5 className="listhead">Basic</h5>
                   <a data-cat="technology">Technology</a>
                   <a data-cat="science">Science</a>
                   <a data-cat="history">History</a>
@@ -85,23 +85,21 @@ const Header = ({ onSelectCategory }) => {
               </div>
 
               {/* Competitive */}
-              {/* <div className="line1">
+              <div className="line1">
                 <div className="line2">
                   <h5 className="listhead">Competitive Exams</h5>
                   <a data-cat="GK">GK</a>
-                  <a data-cat="Polity">Polity</a>
-                  <a data-cat="History">History</a>
-                  <a data-cat="Computer">Computer Awareness</a>
-                  <a data-cat="Geography">Geography</a>
-                  <a data-cat="Economy">Economy</a>
-                  <a data-cat="Science">Science</a>
-                  <a data-cat="Reasoning">Reasoning</a>
-                  <a data-cat="Aptitude">Aptitude</a>
-                  <a data-cat="English">English</a>
-                  <a data-cat="Ethics">Ethics</a>
-                  <a data-cat="Environment">Environment & Ecology</a>
+                  <a data-cat="polity">Polity</a>
+                  <a data-cat="computer">Computer Awareness</a>
+                  <a data-cat="geography">Geography</a>
+                  <a data-cat="economy">Economy</a>
+                  <a data-cat="reasoning">Reasoning</a>
+                  <a data-cat="aptitude">Aptitude</a>
+                  <a data-cat="english">English</a>
+                  <a data-cat="ethics">Ethics</a>
+                  <a data-cat="environment">Environment & Ecology</a>
                 </div>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>

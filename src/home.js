@@ -9,7 +9,7 @@ import Footer from "./components/footer";
 const Home = () => {
   const [facts, setFacts] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [category, setCategory] = useState("general"); 
+  const [category, setCategory] = useState("GK"); 
   const [visibleFacts, setVisibleFacts] = useState([]);
   const navigate = useNavigate();
   const language = localStorage.getItem("language") || "en";
@@ -20,7 +20,7 @@ const Home = () => {
   const fetchFacts = async (selectedCategory, append = false) => {
     setLoading(true);
     try {
-      const res = await fetch(`https://web.backend.duknow.in/api/usersearch/web/${selectedCategory}/limited`);
+      const res = await fetch(`http://localhost:5000/api/usersearch/web/${selectedCategory}/limited`);
       const data = await res.json();
       console.log("Fetched data:", data);
       if (Array.isArray(data)) {
