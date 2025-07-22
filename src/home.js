@@ -9,7 +9,7 @@ import Footer from "./components/footer";
 const Home = () => {
   const [facts, setFacts] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [category, setCategory] = useState("GK"); 
+  const [category, setCategory] = useState("general"); 
   const [visibleFacts, setVisibleFacts] = useState([]);
   const navigate = useNavigate();
   const language = localStorage.getItem("language") || "en";
@@ -127,7 +127,8 @@ const Home = () => {
             ))
           ) : loading ? (
             <div style={{ margin: "30px 20px" }}>
-              <span className="loader"></span> {/* CSS spinner */}
+              loading... {/* CSS spinner */}
+
             </div>
           ) : (
             <p>No facts found.</p>
