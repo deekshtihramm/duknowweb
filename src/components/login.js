@@ -24,7 +24,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:5000/api/stats/login", formData);
+      const res = await axios.post("http://localhost:4000/api/stats/login", formData);
 
       // Store user data (you can use localStorage or context depending on your setup)
       localStorage.setItem("duknowUser", JSON.stringify(res.data.user));
