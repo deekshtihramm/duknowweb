@@ -1,4 +1,8 @@
 # https://www.robotstxt.org/robotstxt.html
+
 User-agent: *
 Disallow:
+
 Allow: /favicon.ico
+
+Sitemap: https://duknow.in/sitemap.xml
