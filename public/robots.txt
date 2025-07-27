@@ -5,4 +5,4 @@ Disallow:
 
 Allow: /favicon.ico
 
-Sitemap: https://duknow.in/sitemap.xml
+Sitemap: https://web.backend.duknow.in/sitemap.xml
