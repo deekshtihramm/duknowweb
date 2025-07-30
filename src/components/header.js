@@ -81,6 +81,7 @@ const Header = ({ onSelectCategory }) => {
                   <a data-cat="food">Health & Food</a>
                   <a data-cat="sports">Sports</a>
                   <a data-cat="space">Space</a>
+                  <a data-cat="Software">Software</a>
                 </div>
               </div>
 
