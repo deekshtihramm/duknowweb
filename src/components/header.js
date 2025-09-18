@@ -41,7 +41,7 @@ const Header = ({ onSelectCategory }) => {
 
       {/* Navigation */}
       <nav className={`nav-links ${menuOpen ? "open" : ""}`} onClick={handleClick}>
-        <a href="https://duknow.in/" style={{ cursor: "pointer" }}>Home</a>
+        <a onClick={() => navigate("/")} style={{ cursor: "pointer" }}>Home</a>
 
         <div className="dropdown">
           <a href="#features">Category &#9662;</a>
@@ -105,8 +105,8 @@ const Header = ({ onSelectCategory }) => {
           </div>
         </div>
 
-        <a href="https://duknow.in/about">About</a>
-        <a href="https://duknow.in/contact">Contact</a>
+        <a  onClick={() => navigate("/about")}>About</a>
+        <a  onClick={() => navigate("/contact")}>Contact</a>
 
         <LanguageSwitcher
           onLanguageChange={(lang) => {

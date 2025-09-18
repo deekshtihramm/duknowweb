@@ -2,74 +2,57 @@ import React, { useEffect, useState } from "react";
 import "./home.css";
 import { ArrowRight } from "lucide-react";
 import Header from "./components/header";
+import Footer from "./components/footer";
 import { useNavigate } from "react-router-dom";
 import mockimg from "./images/online-marketing.png";
-import Footer from "./components/footer";
 
 const Home = () => {
   const [facts, setFacts] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [category, setCategory] = useState("general"); 
   const [visibleFacts, setVisibleFacts] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [category, setCategory] = useState("general");
+  const [page, setPage] = useState(1); // track pages
+  const [moreLoading, setMoreLoading] = useState(false);
   const navigate = useNavigate();
   const language = localStorage.getItem("language") || "en";
-  const [moreLoading, setMoreLoading] = useState(false);
+  const LIMIT = 54; // number of facts per request
 
-
-  // Fetch facts from API
-  const fetchFacts = async (selectedCategory, append = false) => {
-    setLoading(true);
+  const fetchFacts = async (selectedCategory, pageNum = 1, append = false) => {
+    append ? setMoreLoading(true) : setLoading(true);
     try {
-      const res = await fetch(`https://web.backend.duknow.in/api/usersearch/web/${selectedCategory}/limited`);
+      const res = await fetch(
+        `https://web.backend.duknow.in/api/realpages/web/${selectedCategory}/limited?page=${pageNum}&limit=${LIMIT}`
+      );
       const data = await res.json();
-      console.log("Fetched data:", data);
       if (Array.isArray(data)) {
-        if (append) {
-          const newItems = data.filter(
-            (fact) => !facts.some((existing) => existing._id === fact._id)
-          );
-          const updated = [...facts, ...newItems];
-          setFacts(updated);
-          setVisibleFacts((prev) => [...prev, ...newItems.slice(0, 24)]);
-          sessionStorage.setItem("facts", JSON.stringify(updated));
-        } else {
-          setFacts(data);
-          setVisibleFacts(data.slice(0, 24));
-          sessionStorage.setItem("facts", JSON.stringify(data));
-        }
+        const updatedFacts = append ? [...facts, ...data] : data;
+        setFacts(updatedFacts);
+        setVisibleFacts((prev) => (append ? [...prev, ...data] : data));
+        sessionStorage.setItem("facts", JSON.stringify(updatedFacts));
       }
     } catch (err) {
       console.error("Error fetching:", err);
     }
-    setLoading(false);
+    append ? setMoreLoading(false) : setLoading(false);
   };
 
-  // Load from cache + fetch fresh
   useEffect(() => {
-    const cached = sessionStorage.getItem("facts");
-    if (cached) {
-      const parsed = JSON.parse(cached);
-      setFacts(parsed);
-      setVisibleFacts(parsed.slice(0, 24));
-    }
-    fetchFacts(category, false);
+    // reset facts and page on category change
+    setFacts([]);
+    setVisibleFacts([]);
+    setPage(1);
+    fetchFacts(category, 1, false);
   }, [category]);
 
   const handleSelectCategory = (cat) => {
     setCategory(cat.toLowerCase());
   };
 
- const handleShowMore = async () => {
-  const nextItems = facts.slice(visibleFacts.length, visibleFacts.length + 24);
-  if (nextItems.length > 0) {
-    setVisibleFacts((prev) => [...prev, ...nextItems]);
-  } else {
-    setMoreLoading(true); // show loading spinner
-    await fetchFacts(category, true);
-    setMoreLoading(false); // hide spinner after fetch
-  }
-};
-
+  const handleShowMore = () => {
+    const nextPage = page + 1;
+    fetchFacts(category, nextPage, true);
+    setPage(nextPage);
+  };
 
   return (
     <div className="container">
@@ -85,15 +68,16 @@ const Home = () => {
             They improve your accuracy, speed, and confidence — giving you the edge to succeed in the actual exam.
           </p>
           <div className="hero-buttons">
-            <button className="btn btn-primary" onClick={() => navigate("/install")}>Get Started</button>
+            <button className="btn btn-primary" onClick={() => navigate("/install")}>
+              Get Started
+            </button>
             <a href="#features" className="learn-more">
               Learn more <ArrowRight size={16} />
             </a>
           </div>
         </div>
-
         <div className="mock-header">
-          <img src={mockimg} className="mockimg" />
+          <img src={mockimg} className="mockimg" alt="mock" />
         </div>
       </section>
 
@@ -102,8 +86,12 @@ const Home = () => {
         <h2>Daily Facts for {category}</h2>
         <div className="facts-grid">
           {visibleFacts.length > 0 ? (
-            visibleFacts.map((fact, i) => (
-              <div key={i} className="fact" onClick={() => navigate(`/page/${fact.pageNumber}?category=${category}`)}>
+            visibleFacts.map((fact) => (
+              <div
+                key={fact._id}
+                className="fact"
+                onClick={() => navigate(`/page/${fact.pageNumber}?category=${category}`)}
+              >
                 <img
                   src={fact.imageUrl}
                   alt={fact.title}
@@ -126,32 +114,29 @@ const Home = () => {
               </div>
             ))
           ) : loading ? (
-            <div style={{ margin: "30px 20px" }}>
-              loading... {/* CSS spinner */}
-
-            </div>
+           <center><div style={{ margin: "30px 20px" }}>
+            <span className="loader"></span>
+          </div>
+          </center>
           ) : (
             <p>No facts found.</p>
           )}
         </div>
 
         {/* Show More Button */}
-       {visibleFacts.length < facts.length || facts.length < 1000 ? (
-          moreLoading ? (
-            <div style={{ margin: "30px 20px" }}>
-              <span className="loader"></span> {/* CSS spinner */}
-            </div>
-          ) : (
-            <button
-              onClick={handleShowMore}
-              className="btn btn-primary"
-              style={{ margin: "30px 20px" }}
-            >
-              Show More
-            </button>
-          )
-        ) : null}
-
+        {moreLoading ? (
+          <div style={{ margin: "30px 20px" }}>
+            <span className="loader"></span>
+          </div>
+        ) : (
+          <button
+            onClick={handleShowMore}
+            className="btn btn-primary"
+            style={{ margin: "30px 20px" }}
+          >
+            Show More
+          </button>
+        )}
       </div>
 
       {/* Features Section */}

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./contact.css";
+import Header from "./header";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -21,6 +22,8 @@ const Contact = () => {
   };
 
   return (
+    <>
+      <Header />
     <div className="contact-container">
       <h1 className="contact-title">📬 Contact Us</h1>
       <p className="contact-intro">
@@ -65,6 +68,7 @@ const Contact = () => {
         You can also email us directly at <a href="mailto:support@duknow.com">support@duknow.com</a>
       </p>
     </div>
+    </>
   );
 };
 

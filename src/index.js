@@ -16,6 +16,7 @@ import ForgetPassword from './components/forgetpage.js';
 
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import PrivacyPolicy from './components/privacypolicy.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -33,6 +34,7 @@ root.render(
           {/* <Route path='/profile' element={<ProfilePage />} />
           <Route path='/mock' element={<MockTestPage />} /> */}
           <Route path='/forgetpassword' element={<ForgetPassword/>} />
+          <Route path='/privacypolicy' element={<PrivacyPolicy />} />
           <Route path='*' element={<App />} />
         </Routes>
       </BrowserRouter>
