@@ -34,7 +34,7 @@ root.render(
           {/* <Route path='/profile' element={<ProfilePage />} />
           <Route path='/mock' element={<MockTestPage />} /> */}
           <Route path='/forgetpassword' element={<ForgetPassword/>} />
-          <Route path='/privacypolicy' element={<PrivacyPolicy />} />
+          <Route path='/privacy-policy' element={<PrivacyPolicy />} />
           <Route path='*' element={<App />} />
         </Routes>
       </BrowserRouter>
